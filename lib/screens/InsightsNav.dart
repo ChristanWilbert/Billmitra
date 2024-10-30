@@ -1,3 +1,4 @@
+import 'package:bill_mitra/screens/analytics/BusinessPerformanceScreen.dart';
 import 'package:bill_mitra/util/CustomButton.dart';
 import 'package:bill_mitra/util/UnderDevelopment.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class InsightsNav extends StatelessWidget {
                     text: 'Business Performance',
                     bg: "blue",
                     onPressed: () =>
-                        navigateTo(context, UnderConstructionPage()),
+                        navigateTo(context, BusinessPerformanceScreen()),
                   ),
                   const SizedBox(height: 60),
                   CustomButton(
