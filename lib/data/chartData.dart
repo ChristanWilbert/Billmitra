@@ -1,5 +1,5 @@
 class ChartData {
-  ChartData(this.year, this.sales);
-  final DateTime year;
-  final double sales;
+  ChartData(this.date, this.value);
+  final DateTime date;
+  final double value;
 }

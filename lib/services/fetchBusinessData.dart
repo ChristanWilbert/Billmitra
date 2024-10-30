@@ -1,6 +1,4 @@
-import 'dart:ffi';
-
-import 'package:bill_mitra/data/chartData.dart';
+import 'package:bill_mitra/data/ChartData.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
 
