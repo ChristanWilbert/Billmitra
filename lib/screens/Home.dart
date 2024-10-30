@@ -1,4 +1,4 @@
-import 'package:bill_mitra/screens/Dashboard.dart';
+import 'package:bill_mitra/screens/PrimaryNav.dart';
 import 'package:bill_mitra/screens/LoginScreen.dart';
 import 'package:bill_mitra/data/providers.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,8 +15,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var loginState = Provider.of<LoginState>(context);
-    return (loginState.isLoggedIn == true)
-        ? const Dashboard()
-        : const LoginScreen();
+    return (loginState.isLoggedIn == true) ? PrimaryNav() : const LoginScreen();
   }
 }
