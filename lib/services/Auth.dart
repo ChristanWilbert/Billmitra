@@ -6,7 +6,6 @@ import 'firebase_options.dart';
 
 class AuthService {
   late FirebaseApp app1;
-  late FirebaseFirestore _firestore;
 
   AuthService() {
     initFirebase();
@@ -16,7 +15,6 @@ class AuthService {
     app1 = await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    _firestore = FirebaseFirestore.instanceFor(app: app1);
   }
 
   Future<bool> authenticateUser(String username, String password) async {

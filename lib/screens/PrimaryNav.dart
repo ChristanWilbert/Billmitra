@@ -1,6 +1,6 @@
 import 'package:bill_mitra/screens/InsightsNav.dart';
 import 'package:bill_mitra/screens/InventoryNav.dart';
-import 'package:bill_mitra/screens/InvoiceNav.dart';
+import 'package:bill_mitra/screens/InvoiceScreens/InvoiceNav.dart';
 import 'package:bill_mitra/util/CustomButton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,17 +16,17 @@ class PrimaryNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Expanded(
+      body: SingleChildScrollView(
+        child: Center(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Text("Bill Mitra",
                   style: GoogleFonts.jacquesFrancois(
                       color: Colors.black, fontSize: 40)),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Column(
@@ -38,13 +38,13 @@ class PrimaryNav extends StatelessWidget {
                     bg: "blue",
                     onPressed: () => navigateTo(context, InsightsNav()),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   CustomButton(
                     text: 'Invoices',
                     bg: "blue",
                     onPressed: () => navigateTo(context, InvoiceNav()),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   CustomButton(
                     text: 'Inventory',
                     bg: "blue",
@@ -61,7 +61,7 @@ class PrimaryNav extends StatelessWidget {
           // Action for the help button
           showHelpDialog(context);
         },
-        child: Icon(Icons.help_outline),
+        child: const Icon(Icons.help_outline),
       ),
     );
   }
@@ -70,12 +70,13 @@ class PrimaryNav extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Help'),
-        content: Text('Information about using the Bill Mitra app.'),
+        title: const Text('Help'),
+        content: const Text(
+            'Navigate to the desired services by selecting the provided options \n->Go to Insights to get an overview of the overall business\n->Go to Invoices to access all the recorded transactions\n->Go to Inventory to observe the stock management'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('OK'),
+            child: const Text('OK'),
           ),
         ],
       ),

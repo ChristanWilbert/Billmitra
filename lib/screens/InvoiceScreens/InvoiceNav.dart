@@ -1,9 +1,10 @@
+import 'package:bill_mitra/screens/InvoiceScreens/purchaseinvoicelists.dart';
+import 'package:bill_mitra/screens/InvoiceScreens/salesinvoicelistscreen.dart';
 import 'package:bill_mitra/util/CustomButton.dart';
-import 'package:bill_mitra/util/UnderDevelopment.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InventoryNav extends StatelessWidget {
+class InvoiceNav extends StatelessWidget {
   void navigateTo(BuildContext context, Widget widget) {
     Navigator.push(
       context,
@@ -20,7 +21,7 @@ class InventoryNav extends StatelessWidget {
             const SizedBox(
               height: 100,
             ),
-            Text("Inventory\nManagement",
+            Text("Invoice\nManagement",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.jacquesFrancois(
                     color: Colors.black, fontSize: 35)),
@@ -32,15 +33,15 @@ class InventoryNav extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CustomButton(
-                  text: 'Stock Availability',
-                  bg: "blue",
-                  onPressed: () => navigateTo(context, UnderConstructionPage()),
+                  text: 'Sales',
+                  bg: "green",
+                  onPressed: () => navigateTo(context, SalesInvoiceScreen()),
                 ),
                 const SizedBox(height: 60),
                 CustomButton(
-                  text: 'Stock Requirement',
-                  bg: "blue",
-                  onPressed: () => navigateTo(context, UnderConstructionPage()),
+                  text: 'Purchase',
+                  bg: "red",
+                  onPressed: () => navigateTo(context, PurchaseInvoiceScreen()),
                 ),
                 const SizedBox(height: 30),
               ],
@@ -64,7 +65,7 @@ class InventoryNav extends StatelessWidget {
       builder: (context) => AlertDialog(
         title: const Text('Help'),
         content: const Text(
-            "Monitor the overall stocks and property\n->Go to 'Stock Availability' to get a sense of the items at hand\n->'Stock Requirements' predicts the future goods and item needs based on existing orders and past purchase trends"),
+            "Get the sales and purchase transaction details respectively"),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
